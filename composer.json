@@ -1,0 +1,28 @@
+{
+    "name": "um-flint/laravel-device42",
+    "description": "Laravel package for the Device42 API.",
+    "keywords": [
+        "laravel",
+        "device42"
+    ],
+    "type": "package",
+    "require": {
+        "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Donald Wilcox",
+            "email": "dowilcox@umflint.edu"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "UMFlint\\Device42\\": "src/"
+        }
+    }
+}
