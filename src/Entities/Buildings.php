@@ -9,11 +9,12 @@ class Buildings extends BaseEntity
      *
      * @link    http://api.device42.com/#get-all-buildings
      * @author  Donald Wilcox <dowilcox@umflint.edu>
+     * @param null $name
      * @param null $limit
      * @param null $offset
      * @return mixed
      */
-    public function all($limit = null, $offset = null)
+    public function all($name = null, $limit = null, $offset = null)
     {
         $query = [];
 
@@ -23,6 +24,10 @@ class Buildings extends BaseEntity
 
         if (!is_null($offset)) {
             $query['offset'] = $offset;
+        }
+
+        if (!is_null($name)) {
+            $query['name'] = $name;
         }
 
         $data = $this->device42->get('buildings', [
