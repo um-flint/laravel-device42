@@ -59,7 +59,16 @@ class BuildingsTest extends \PHPUnit\Framework\TestCase
         $data = $this->buildings->all();
 
         $this->assertEquals(true, isset($data['buildings']));
-        $this->assertEquals(3, count($data['buildings']));
+        $this->assertEquals([
+            'address'       => '879 main st',
+            'building_id'   => 3,
+            'contact_name'  => 'roger',
+            'contact_phone' => '1234567890',
+            'custom_fields' => [],
+            'groups'        => 'Prod_East:no, Corp:yes',
+            'name'          => 'Las Vegas Office',
+            'notes'         => 'super critical',
+        ], $data['buildings'][0]);
     }
 
     public function testCreateOrUpdate()
