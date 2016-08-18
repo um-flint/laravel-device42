@@ -34,6 +34,7 @@ class Device42ServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerDevice42();
+        $this->registerEntities();
     }
 
     /**
