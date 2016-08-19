@@ -2,14 +2,14 @@ Laravel Device42
 ============
 Laravel 5 package to interact with the [Device42 API](http://api.device42.com/). Not all of the Device42 API endpoints are completed. If you need an endpoint added feel free to submit a pull request.
  
- ### Installation
- Install with composer
+### Installation
+Install with composer
  ```bash
  composer require um-flint/laravel-device42
  ```
  
- ### Register the package
- In config/app.php add the service provider.
+### Register the package
+In config/app.php add the service provider.
  
 ```php
 UMFlint/Device42/Device42ServiceProvider::class,
