@@ -269,12 +269,16 @@ class Devices extends BaseEntity
      * @param $name
      * @return mixed
      */
-    public function getUrls($name)
+    public function getUrls($name = null)
     {
+        $query = [];
+
+        if (!is_null($name)) {
+            $query['device'] = $name;
+        }
+
         return $this->device42->get('device/url', [
-            'query' => [
-                'device' => $name,
-            ],
+            'query' => $query,
         ]);
     }
 
