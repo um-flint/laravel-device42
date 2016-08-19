@@ -43,7 +43,7 @@ class Device42 implements Device42Contract
      */
     public function get($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->get($endpoint), $options);
+        return $this->handleResponse($this->client->get($endpoint, $options));
     }
 
     /**
@@ -55,7 +55,7 @@ class Device42 implements Device42Contract
      */
     public function post($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->post($endpoint), $options);
+        return $this->handleResponse($this->client->post($endpoint, $options));
     }
 
     /**
@@ -67,7 +67,7 @@ class Device42 implements Device42Contract
      */
     public function put($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->put($endpoint), $options);
+        return $this->handleResponse($this->client->put($endpoint, $options));
     }
 
     /**
@@ -79,7 +79,7 @@ class Device42 implements Device42Contract
      */
     public function delete($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->delete($endpoint), $options);
+        return $this->handleResponse($this->client->delete($endpoint, $options));
     }
 
     /**
@@ -91,7 +91,7 @@ class Device42 implements Device42Contract
      */
     public function patch($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->patch($endpoint), $options);
+        return $this->handleResponse($this->client->patch($endpoint, $options));
     }
 
     /**
@@ -103,7 +103,7 @@ class Device42 implements Device42Contract
      */
     public function head($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->head($endpoint), $options);
+        return $this->handleResponse($this->client->head($endpoint, $options));
     }
 
     /**
@@ -115,6 +115,6 @@ class Device42 implements Device42Contract
      */
     public function options($endpoint, $options = [])
     {
-        return $this->handleResponse($this->client->options($endpoint), $options);
+        return $this->handleResponse($this->client->options($endpoint, $options));
     }
 }
