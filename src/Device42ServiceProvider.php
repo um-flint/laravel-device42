@@ -44,7 +44,7 @@ class Device42ServiceProvider extends ServiceProvider
      */
     protected function registerDevice42()
     {
-        $this->app->singleton(Device42::class, function ($app) {
+        $this->app->singleton(Device42Contract::class, function ($app) {
             $config = $app['config']['device42'];
             $url = rtrim($config['url'], '/');
 
@@ -58,8 +58,6 @@ class Device42ServiceProvider extends ServiceProvider
 
             return new Device42($client);
         });
-
-        $this->app->bind(Device42Contract::class, $this->app->make(Device42::class));
     }
 
     /**
