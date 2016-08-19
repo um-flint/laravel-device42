@@ -20,7 +20,7 @@ class Device42ServiceProvider extends ServiceProvider
         $config = realpath(__DIR__ . '/../config/device42.php');
 
         $this->publishes([
-            $config => config_path('device42'),
+            $config => config_path('device42.php'),
         ]);
 
         $this->mergeConfigFrom($config, 'device42');
