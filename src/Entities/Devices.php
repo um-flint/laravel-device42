@@ -10,20 +10,10 @@ class Devices extends BaseEntity
      * @link   http://api.device42.com/#get-all-devices-with-brief-output
      * @author Donald Wilcox <dowilcox@umflint.edu>
      * @param array $query
-     * @param null  $limit
-     * @param null  $offset
      * @return mixed
      */
-    public function all($query = [], $limit = null, $offset = null)
+    public function all($query = [])
     {
-        if (!is_null($limit)) {
-            $query['limit'] = $limit;
-        }
-
-        if (!is_null($offset)) {
-            $query['offset'] = $offset;
-        }
-
         return $this->device42->get('devices', [
             'query' => $query,
         ]);;
@@ -35,20 +25,10 @@ class Devices extends BaseEntity
      * @link   http://api.device42.com/#get-all-devices-with-detailed-output-added-in-v6-3-4
      * @author Donald Wilcox <dowilcox@umflint.edu>
      * @param array $query
-     * @param null  $limit
-     * @param null  $offset
      * @return mixed
      */
-    public function allDetailed($query = [], $limit = null, $offset = null)
+    public function allDetailed($query = [])
     {
-        if (!is_null($limit)) {
-            $query['limit'] = $limit;
-        }
-
-        if (!is_null($offset)) {
-            $query['offset'] = $offset;
-        }
-
         return $this->device42->get('devices/all', [
             'query' => $query,
         ]);;
