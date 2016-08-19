@@ -307,7 +307,13 @@ class Devices extends BaseEntity
      */
     public function updateUrl(array $data)
     {
-        return $this->device42->put('device/url', [
+        $url = 'device/url';
+
+        if (isset($data['id'])) {
+            $url .= "/{$data['id']}";
+        }
+
+        return $this->device42->put($url, [
             'form_params' => $data,
         ]);
     }
