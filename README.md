@@ -18,12 +18,12 @@ UMFlint/Device42/Device42ServiceProvider::class,
 ### Example usage
 Basic example in a controller:
 ```php
-use UMFlint/Device42/Contracts/Device42;
+use UMFlint/Device42/Entities/Devices;
 ...
 
-public function getIndex(Device42 $device42)
+public function getIndex(Devices $devicesEntity)
 {
-    $devices = $device42->all();
+    $devices = $devicesEntity->all();
 }
 ```
 `$devices` will return an array like:
