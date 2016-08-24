@@ -16,7 +16,7 @@ class Devices extends BaseEntity
     {
         return $this->device42->get('devices', [
             'query' => $query,
-        ]);;
+        ]);
     }
 
     /**
@@ -31,7 +31,7 @@ class Devices extends BaseEntity
     {
         return $this->device42->get('devices/all', [
             'query' => $query,
-        ]);;
+        ]);
     }
 
     /**
