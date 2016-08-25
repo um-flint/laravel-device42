@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
 use UMFlint\Device42\Contracts\Device42 as Device42Contract;
 use UMFlint\Device42\Entities\Buildings;
+use UMFlint\Device42\Entities\Certificates;
 use UMFlint\Device42\Entities\Customers;
 use UMFlint\Device42\Entities\Devices;
 
@@ -82,6 +83,10 @@ class Device42ServiceProvider extends ServiceProvider
 
         $this->app->bind(Software::class, function ($app) {
             return new Software($app->make(Device42Contract::class));
+        });
+
+        $this->app->bind(Certificates::class, function ($app) {
+            return new Certificates($app->make(Device42Contract::class));
         });
     }
 }
