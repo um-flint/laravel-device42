@@ -79,5 +79,9 @@ class Device42ServiceProvider extends ServiceProvider
         $this->app->bind(Customers::class, function ($app) {
             return new Customers($app->make(Device42Contract::class));
         });
+
+        $this->app->bind(Software::class, function ($app) {
+            return new Software($app->make(Device42Contract::class));
+        });
     }
 }
