@@ -9,6 +9,7 @@ use UMFlint\Device42\Entities\Buildings;
 use UMFlint\Device42\Entities\Certificates;
 use UMFlint\Device42\Entities\Customers;
 use UMFlint\Device42\Entities\Devices;
+use UMFlint\Device42\Entities\OperatingSystems;
 
 class Device42ServiceProvider extends ServiceProvider
 {
@@ -87,6 +88,10 @@ class Device42ServiceProvider extends ServiceProvider
 
         $this->app->bind(Certificates::class, function ($app) {
             return new Certificates($app->make(Device42Contract::class));
+        });
+
+        $this->app->bind(OperatingSystems::class, function ($app) {
+            return new OperatingSystems($app->make(Device42Contract::class));
         });
     }
 }
