@@ -6,4 +6,8 @@ return [
         'user'     => 'apiuser',
         'password' => 'apipassword',
     ],
+    // Guzzle HTTP Options.
+    'http' => [
+        'verify' => true,
+    ],
 ];

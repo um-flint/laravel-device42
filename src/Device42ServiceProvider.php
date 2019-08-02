@@ -51,13 +51,15 @@ class Device42ServiceProvider extends ServiceProvider
             $config = $app['config']['device42'];
             $url = rtrim($config['url'], '/');
 
-            $client = new Client([
+            $clientConfig = array_merge($app['config']['device42']['http'], [
                 'base_uri' => "{$url}/api/1.0/",
                 'auth'     => [
                     $config['auth']['user'],
                     $config['auth']['password'],
                 ],
             ]);
+
+            $client = new Client($clientConfig);
 
             return new Device42($client);
         });
